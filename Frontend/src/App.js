@@ -1,8 +1,9 @@
-import Home from "./slug/Home";
-import "./App.css";
-import Header from "./components/Header";
-// import ConnectButtonContainer from "./components/ConnectButton";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+// import ConnectButtonContainer from "./components/ConnectButton";
+
+import Home from "./slug/Home";
+import Header from "./components/Header";
 import Merchandise from "./slug/Merchandise";
 import Social from "./slug/Social";
 import Polls from "./slug/Polls";
