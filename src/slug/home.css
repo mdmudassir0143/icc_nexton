@@ -42,6 +42,8 @@
     border-radius: 8.75px;
     white-space: nowrap;
     width: 100%;
+    min-width: fit-content;
+    padding: 12px 20px;
     background-color: #5858e0;
     color: #fff;
     text-align: center;
