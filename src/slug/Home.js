@@ -13,19 +13,32 @@ export default function Home() {
       </div>
       <div className="home_banner">
         <img
-          src="https://e0.pxfuel.com/wallpapers/333/748/desktop-wallpaper-pes-2017-release-date-announced-last-gen-pc-versions-20-cheaper.jpg"
+          src="https://w0.peakpx.com/wallpaper/713/658/HD-wallpaper-indian-cricket-team-2015.jpg"
           height="100%"
           width="100%"
+          alt="img"
         />
       </div>
       <p className="section_heading">Stadium interactions</p>
       <div className="controls">
         <div className="btn btn_order_food">Engage Fan movement</div>
-        <div className="btn btn_live_bet">🎮</div>
+        <div className="btn btn_live_bet">Fun Activities</div>
       </div>
       <p className="section_heading">Earn Rewards</p>
       <div className="merchandise">
+        <div className="btn">Dispose and Earn</div>
+      </div>
+      <div className="merchandise">
+        <div className="btn">Participate in Live Polls</div>
+      </div>
+      <div className="merchandise">
         <div className="btn">Share your social media engagement</div>
+      </div>
+
+      <p className="section_heading">Explore</p>
+      <div className="controls">
+        <div className="btn btn_order_food">Buy Ticket</div>
+        <div className="btn btn_live_bet">Games Schedules</div>
       </div>
       <div className="merchandise">
         <div className="btn">Get directions to your seat</div>
@@ -35,11 +48,6 @@ export default function Home() {
       </div>
       <div className="merchandise">
         <div className="btn">Book Stay near your stadium</div>
-      </div>
-      <p className="section_heading">Explore</p>
-      <div className="controls">
-        <div className="btn btn_order_food">Buy Ticket</div>
-        <div className="btn btn_live_bet">Games Schedules</div>
       </div>
       <div className="merchandise">
         <div className="btn">Checkout the official merchandise</div>
