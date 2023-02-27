@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import "./App.css";
 // import ConnectButtonContainer from "./components/ConnectButton";
 
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/engage" element={<Engage />} />
@@ -29,7 +28,6 @@ function App() {
           <Route path="/scan" element={<Scan />} />
           <Route path="/modal" element={<Modal />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }

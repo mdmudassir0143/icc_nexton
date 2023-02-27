@@ -1,6 +1,6 @@
 import React from "react";
-import M1 from "../assets/1.gif"
-import M2 from "../assets/2.gif"
+import M1 from "../assets/img/1.gif"
+import M2 from "../assets/img/2.gif"
 
 export default function Modal() {
   return (

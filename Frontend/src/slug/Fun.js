@@ -1,5 +1,5 @@
 import React from "react";
-import M1 from "../assets/M1.gif";
+import M1 from "../assets/img/M1.gif";
 import "./fun.css";
 
 export default function Fun() {

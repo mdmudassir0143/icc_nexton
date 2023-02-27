@@ -1,9 +1,9 @@
 import React from "react";
-import "./engage.css";
-import M1 from "../assets/M1.gif";
-import M2 from "../assets/M2.gif";
-import M3 from "../assets/M3.gif";
+import M1 from "../assets/img/M1.gif";
+import M2 from "../assets/img/M2.gif";
+import M3 from "../assets/img/M3.gif";
 import { Link } from "react-router-dom";
+import "../assets/css/engage.css"
 
 export default function Engage() {
   return (

@@ -1,67 +1,153 @@
-import "./home.css";
+import "../assets/css/home.css";
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {
+  Typography,
+  Button,
+  Box,
+  IconButton,
+} from "@mui/material";
+
+import homeBanner from "../assets/img/homeBanner.jpg";
 
 export default function Home() {
+  const navigate = useNavigate()
   return (
-    <div className="container">
-      <p className="welcome_msg">Welcome to ICC neXton</p>
-      <Link to="/scan">
-        <div className="float_scan_ticket">
-          <span className="icon">
-            <QrCodeScannerIcon style={{ fontSize: "40px" }} />
-          </span>
-          Scan Ticket to enter neXton
-        </div>
-      </Link>
+    <Box
+      display="flex"
+      flexDirection="column"
+      padding="5px 20px 20px 20px"
+    >
+
+      <Typography
+        variant="h5"
+        textAlign="center"
+        p="10px"
+        mb="10px"
+      >
+        Welcome to ICC neXton
+      </Typography>
+
+      <Button
+        variant="outlined"
+        color="secondary"
+        className="float_scan_ticket"
+        onClick={() => navigate("/scan")}
+        style={{
+          width: "100%",
+          borderRadius: "1rem",
+        }}
+      >
+        <IconButton
+          color="secondary"
+        >
+          <QrCodeScannerIcon style={{ fontSize: "40px" }} />
+        </IconButton>
+        Scan Ticket to enter neXton
+      </Button>
+
       <div className="home_banner">
         <img
-          src="https://w0.peakpx.com/wallpaper/713/658/HD-wallpaper-indian-cricket-team-2015.jpg"
+          src={homeBanner}
           height="100%"
           width="100%"
-          alt="img"
+          alt="homeBanner"
         />
       </div>
-      <p className="section_heading">Stadium interactions</p>
-      <div className="controls">
-        <Link to="/engage">
-          <div className="btn btn_order_food">Engage Fan movement</div>
-        </Link>
-        <Link to="/fun">
-          <div className="btn btn_live_bet">Fun Games</div>
-        </Link>
-      </div>
-      <p className="section_heading">Earn Rewards</p>
-      <div className="merchandise">
-        <div className="btn">Dispose and Earn</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Participate in Live Polls</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Share your social media engagement</div>
-      </div>
 
-      <p className="section_heading">Explore</p>
-      <div className="controls">
-        <div className="btn btn_order_food">Buy Ticket</div>
-        <div className="btn btn_live_bet">Games Schedules</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Get directions to your seat</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Book parking slot</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Book Stay near your stadium</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Checkout the official merchandise</div>
-      </div>
-      <div className="merchandise">
-        <div className="btn">Recycle and Earn</div>
-      </div>
-    </div>
+      <Typography
+        variant="h6"
+        m="10px 0px"
+      >
+        Stadium interactions
+      </Typography>
+      <Box
+        display="flex"
+        width="100%"
+        justifyContent="space-between"
+        gap="10px"
+      >
+        <Button
+          variant="contained"
+          width="40%"
+          m="25px"
+          onClick={() => navigate("/engage")}
+        >
+          Engage Fan movement
+        </Button>
+
+        <Button
+          variant="contained"
+          width="40%"
+          onClick={() => navigate("/fun")}
+        >
+          Fun Activities
+        </Button>
+      </Box>
+
+      <Typography
+        variant="h6"
+        m="10px 0px"
+      >
+        Earn Rewards
+      </Typography>
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap="10px"
+      >
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Dispose and Earn
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Participate in Live Polls
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Share your social media engagement
+        </Button>
+      </Box>
+
+      <Typography
+        variant="h6"
+        m="10px 0px"
+      >
+        Explore More
+      </Typography>
+      <Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap="10px"
+        >
+          <Button
+            variant="contained"
+            onClick={() => navigate("")}
+          >
+            Buy Tickets
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => navigate("")}
+          >
+            Game Schedule
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => navigate("")}
+          >
+            Check Official Merchandise
+          </Button>
+        </Box>
+      </Box>
+    </Box>
   );
 }

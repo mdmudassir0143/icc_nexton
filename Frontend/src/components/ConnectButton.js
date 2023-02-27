@@ -1,6 +1,6 @@
 // import React from 'react'
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
-// import "./connectButton.css"
+// import "../assets/css/connectButton.css";
 // const ConnectButtonContainer = () => {
 //   return (
 //     <div className="Button">
