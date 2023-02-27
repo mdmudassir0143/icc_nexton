@@ -11,6 +11,7 @@ import Recycle from "./slug/Recycle";
 import Fun from "./slug/Fun";
 import Engage from "./slug/Engage";
 import Scan from "./slug/Scan";
+import Modal from "./slug/Modal";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/engage-social" element={<Social />} />
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/scan" element={<Scan />} />
+          <Route path="/modal" element={<Modal />} />
         </Routes>
       </BrowserRouter>
     </div>

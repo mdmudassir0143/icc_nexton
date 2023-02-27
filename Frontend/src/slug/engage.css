@@ -1,11 +1,41 @@
 .container{
-    
+    margin-bottom: 10px;
+}
+.modal{
+    padding: 15px;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.modal{
-    
+.modal img, .chant img{
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .chant{
-
+    padding: 15px;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
+.heading{
+    text-align: center;
+    font-size: 15PX;
+    font-weight: 500;
+}
+
+/* .left{
+    display: flex;
+    flex-direction: row;
+}
+
+.righ{
+    display: flex;
+    flex-direction: row;
+} */

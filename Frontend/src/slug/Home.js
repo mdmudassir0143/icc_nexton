@@ -28,7 +28,7 @@ export default function Home() {
           <div className="btn btn_order_food">Engage Fan movement</div>
         </Link>
         <Link to="/fun">
-          <div className="btn btn_live_bet">Fun Activities</div>
+          <div className="btn btn_live_bet">Fun Games</div>
         </Link>
       </div>
       <p className="section_heading">Earn Rewards</p>
