@@ -1,5 +1,5 @@
 import React from "react";
-import "./engage.css"
+import "../assets/css/engage.css"
 
 export default function Engage() {
   return <div className="container">
