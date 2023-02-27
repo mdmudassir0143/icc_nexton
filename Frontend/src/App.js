@@ -1,6 +1,7 @@
 import { Routes, Route, } from "react-router-dom";
 import "./App.css";
 // import ConnectButtonContainer from "./components/ConnectButton";
+import { Box } from "@mui/material";
 
 import Home from "./slug/Home";
 import Header from "./components/Header";
@@ -16,7 +17,10 @@ import Modal from "./slug/Modal";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Box
+        className="MainApp"
+      >
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/engage" element={<Engage />} />
@@ -28,6 +32,7 @@ function App() {
           <Route path="/scan" element={<Scan />} />
           <Route path="/modal" element={<Modal />} />
         </Routes>
+      </Box>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 
-import homeBanner from "../assets/img/homeBanner.jpg";
+import Caurosal from "../components/Caurosal";
 
 export default function Home() {
   const navigate = useNavigate()
@@ -36,6 +36,7 @@ export default function Home() {
         style={{
           width: "100%",
           borderRadius: "1rem",
+          marginBottom: "20px",
         }}
       >
         <IconButton
@@ -46,14 +47,7 @@ export default function Home() {
         Scan Ticket to enter neXton
       </Button>
 
-      <div className="home_banner">
-        <img
-          src={homeBanner}
-          height="100%"
-          width="100%"
-          alt="homeBanner"
-        />
-      </div>
+      <Caurosal />
 
       <Typography
         variant="h6"
