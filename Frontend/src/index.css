@@ -22,3 +22,29 @@ code {
   padding: 0;
   margin: 0;
 }
+h1,
+h2,
+h3 {
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn_t,
+.btn-dark,
+.btn-check:focus + .btn-dark,
+.btn-dark:focus,
+.btn-check:focus + .btn_t,
+.btn_t:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.btn-dark:hover {
+  background: #212529;
+}
+
+.bg-primary,
+.btn-light {
+  letter-spacing: 0.7px;
+}

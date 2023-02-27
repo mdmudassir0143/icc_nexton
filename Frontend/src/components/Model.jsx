@@ -1,5 +1,5 @@
 import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useRef, useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { standingClap } from "../assets/standing-clap.glb"
