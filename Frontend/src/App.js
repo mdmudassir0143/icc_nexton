@@ -1,7 +1,6 @@
 import { Routes, Route, } from "react-router-dom";
 import "./App.css";
 // import ConnectButtonContainer from "./components/ConnectButton";
-import { Box } from "@mui/material";
 
 import Home from "./slug/Home";
 import Header from "./components/Header";
@@ -13,14 +12,12 @@ import Fun from "./slug/Fun";
 import Engage from "./slug/Engage";
 import Scan from "./slug/Scan";
 import Modal from "./slug/Modal";
+import CustomCanvas from "./slug/Canvas";
 
 function App() {
   return (
     <div className="App">
-      <Box
-        className="MainApp"
-      >
-        <Header />
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/engage" element={<Engage />} />
@@ -31,8 +28,8 @@ function App() {
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/scan" element={<Scan />} />
           <Route path="/modal" element={<Modal />} />
+          <Route path="/engage/experience" element = {<CustomCanvas/>}/>
         </Routes>
-      </Box>
     </div>
   );
 }
