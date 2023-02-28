@@ -32,7 +32,7 @@ const Quiz = ({
       "yellow";
     setSelectedOption(id);
   }
-  const [timer, setTimer] = useState(5);
+  const [timer, setTimer] = useState(10);
 
   useEffect(() => {
     let int_id;
@@ -60,7 +60,7 @@ const Quiz = ({
           (item) => (item.style.backgroundColor = "white")
         );
         setSelectedOption(null);
-        setTimer(5);
+        setTimer(10);
       }, 1000);
     }
     return () => clearInterval(int_id);

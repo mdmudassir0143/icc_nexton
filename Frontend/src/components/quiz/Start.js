@@ -1,7 +1,9 @@
 import React from "react";
-
+import PageHead from '../PageHead'
 const Start = ({ startQuiz, showStart }) => {
   return (
+    <>
+    <PageHead title="Live Games" />
     <section
       className="text-white text-center bg-dark"
       style={{ display: `${showStart ? "block" : "none"}` }}
@@ -20,6 +22,7 @@ const Start = ({ startQuiz, showStart }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
