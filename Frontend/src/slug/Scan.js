@@ -21,11 +21,11 @@ const theme = createTheme();
 export default function Scan({ isTicket, setIsticket }) {
   let navigate = useNavigate();
 
-  useEffect(() => {
-    if (isTicket) {
-      return navigate("/");
-    }
-  }, [isTicket]);
+  // useEffect(() => {
+  //   if (!isTicket) {
+  //     return navigate("/");
+  //   }
+  // }, [isTicket]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,17 +34,14 @@ export default function Scan({ isTicket, setIsticket }) {
       email: data.get("email"),
     });
     setIsticket(true);
-    navigate("/home");
+    navigate(-2);
   };
 
   return (
     <div>
       <PageHead title="Scan Ticket" />
       <ThemeProvider theme={theme}>
-        <Container 
-          component="main" 
-          maxWidth="xs"
-        >
+        <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
             sx={{

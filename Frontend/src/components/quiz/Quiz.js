@@ -1,5 +1,5 @@
 import { style } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Option from "./Option";
 
 const Quiz = ({
@@ -8,26 +8,63 @@ const Quiz = ({
   quizs,
   checkAnswer,
   correctAnswer,
+  setMarks,
   selectedAnswer,
   questionIndex,
   nextQuestion,
   showTheResult,
 }) => {
-  
-  const [votes,setVotes] = useState([
+  const [votes, setVotes] = useState([
     {
       id: "",
-      votes: ""
-    }
-  ])
+      votes: "",
+    },
+  ]);
 
-  const [clicked,setClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  let [selectedOption, setSelectedOption] = useState(null);
 
-
-  function handleClick(id) {
-    // console.log(id);
+  function handleOptionSelect(id, selected, ans) {
+    Array.from(document.querySelectorAll(".option")).map(
+      (item) => (item.style.backgroundColor = "white")
+    );
+    Array.from(document.querySelectorAll(".option"))[id].style.backgroundColor =
+      "yellow";
+    setSelectedOption(id);
   }
+  const [timer, setTimer] = useState(5);
 
+  useEffect(() => {
+    let int_id;
+    if (timer > 0) {
+      int_id = setInterval(() => {
+        setTimer(() => timer - 1);
+      }, 1000);
+    } else if (timer == 0) {
+      // console.log(question.options[selectedOption], question.answer);
+      if (question.options[selectedOption] == question.answer) {
+        Array.from(document.querySelectorAll(".option"))[
+          selectedOption
+        ].style.backgroundColor = "Green";
+        setMarks((prev) => prev + 5);
+      } else {
+        if (selectedOption)
+          Array.from(document.querySelectorAll(".option"))[
+            selectedOption
+          ].style.backgroundColor = "red";
+      }
+      setTimeout(() => {
+        nextQuestion();
+        // if (selectedOption)
+        Array.from(document.querySelectorAll(".option")).map(
+          (item) => (item.style.backgroundColor = "white")
+        );
+        setSelectedOption(null);
+        setTimer(5);
+      }, 1000);
+    }
+    return () => clearInterval(int_id);
+  }, [timer]);
 
   return (
     <section
@@ -36,14 +73,27 @@ const Quiz = ({
     >
       <div className="container">
         <div className="row vh-100 align-items-center justify-content-center">
+          <div
+            className="timer"
+            style={{ margin: " 10px 0 10px 0", textAlign: "right" }}
+          >
+            Answer in {timer} sec
+          </div>
           <div className="col-lg-8">
-            <div
-              className="card p-4"
-              style={{ background: "#3d3d3d", borderColor: "#646464",height: "40em" }}
-            >
+            <div className="card p-4" style={{}}>
               <div className="d-flex justify-content-between gap-md-3">
-                <h5 className="mb-2 fs-normal lh-base">{question?.question}</h5>
                 <h5
+                  className="mb-2 fs-normal lh-base"
+                  style={{
+                    width: "",
+                    textAlign: "center",
+                    fontSize: "21px",
+                    marginLeft: "5%",
+                  }}
+                >
+                  {question?.question}
+                </h5>
+                {/* <h5
                   style={{
                     color: "#60d600",
                     width: "100px",
@@ -51,15 +101,24 @@ const Quiz = ({
                   }}
                 >
                   {quizs.indexOf(question) + 1} / {quizs?.length}
-                </h5>
+                </h5> */}
               </div>
               <div>
                 {question?.options?.map((item, index) => (
-                  <Option item = {item} key = {index} handleClick = {handleClick} id = {index+1}/>
+                  <div
+                    className="option"
+                    key={index}
+                    onClick={() =>
+                      handleOptionSelect(index, item, question.answer)
+                    }
+                  >
+                    {item}
+                  </div>
                 ))}
               </div>
 
-              {questionIndex + 1 !== quizs.length ? (
+              {console.log(questionIndex, quizs.length, "end")}
+              {questionIndex + 1 < quizs.length ? (
                 <button
                   className="btn_t py-2 w-100 mt-3 bg-primary text-light fw-bold"
                   onClick={nextQuestion}
