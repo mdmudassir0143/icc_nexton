@@ -11,3 +11,12 @@
 .g1 img, .g2 img, .g3 img{
     border-radius: 10px;
 }
+
+.g3 a,.g2 a,.g1 a{
+    padding: 15px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}

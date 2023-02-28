@@ -2,6 +2,7 @@ import React from "react";
 import PageHead from "../components/PageHead";
 
 import M1 from "../assets/img/M1.gif";
+import wteam from "../assets/img/wteam.png";
 import "./fun.css";
 
 import { Box } from "@mui/material";
@@ -25,15 +26,15 @@ export default function Fun({ logged, isTicket, setIsTicket }) {
       <Box backgroundColor="#FAFAFA">
         <div className="g1">
           <div className="heading">EVOLVE YOUR PLAYER</div>
-          <img src={M1} alt="Loading..." />
+          <a href="https://whitelist-dapp-delta-five.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
         </div>
         <div className="g2">
           <div className="heading">CLAIM YOUR NFT</div>
-          <img src={M1} alt="Loading..." />
+          <a href="https://whitelist-dapp-delta-five.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
         </div>
         <div className="g3">
           <div className="heading">WHITELIST YOUR ADDRESS</div>
-          <img src={M1} alt="Loading..." />
+          <a href="https://whitelist-dapp-delta-five.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
         </div>
       </Box>
     </Box>

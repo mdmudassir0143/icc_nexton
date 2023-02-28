@@ -21,7 +21,7 @@ export default function Header() {
           <img 
             src={logo}
             alt="logo"
-            style={{ width: "50px", height: "50px" }}
+            style={{ width: "40px", height: "40px" }}
           />
         </Button>
       </div>

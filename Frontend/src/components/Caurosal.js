@@ -27,7 +27,7 @@ function Caurosal() {
             animation="fade"
             interval="2000"
             indicators={false}
-            navButtonsAlwaysInvisible={true}
+            // navButtonsAlwaysInvisible={true}
             sx={{
                 maxHeight: "15rem",
             }}

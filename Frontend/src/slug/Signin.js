@@ -22,10 +22,10 @@ export default function SignIn({ logged, setLogged }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    // console.log({
+    //   email: data.get("email"),
+    //   password: data.get("password"),
+    // });
     setLogged(true);
     return navigate("/home");
   };
@@ -38,7 +38,7 @@ export default function SignIn({ logged, setLogged }) {
       <Container
         component="main"
         maxWidth="xs"
-        style={{ marginBottom: "50px" }}
+        style={{ marginBottom: "100px" }}
       >
         <CssBaseline />
         <Box
@@ -59,7 +59,7 @@ export default function SignIn({ logged, setLogged }) {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ mt: 10 }}
           >
             <TextField
               margin="normal"
