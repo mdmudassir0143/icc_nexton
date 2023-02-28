@@ -4,8 +4,12 @@
     width: 80%;
     height: auto;
     margin: auto;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
 }
 
 .g1 img, .g2 img, .g3 img{

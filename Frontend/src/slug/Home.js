@@ -97,10 +97,10 @@ export default function Home({ logged, isTicket, setIsTicket }) {
       <Box>
         <Box display="flex" flexDirection="column" gap="10px">
           <Button variant="contained" onClick={() => navigate("")}>
-            Buy Tickets
+            Game Schedule
           </Button>
           <Button variant="contained" onClick={() => navigate("")}>
-            Game Schedule
+            Buy Tickets
           </Button>
           <Button variant="contained" onClick={() => navigate("")}>
             Check Official Merchandise
