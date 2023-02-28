@@ -10,12 +10,18 @@ function PageHead({title}) {
     <Box
         borderRadius="0 0 3px 3px"
         padding="0 0 10px 0"
-        boxShadow="0px 20px 10px 0px rgba(0,0,0,0.75)"
-        zIndex="10"
+        // boxShadow="0px 20px 10px 0px rgba(0,0,0,0.75)"
+        // zIndex="10"
+        display="flex"
+        alignItems="center"
+        gap="1rem"
+        p="0.7rem"
         // marginBottom="5px"
     >
         <WestIcon
             sx={{
+                fontSize: '1.75rem',
+                fontWeight: 'light',
                 '&:hover': {
                     cursor: 'pointer',
                 }
