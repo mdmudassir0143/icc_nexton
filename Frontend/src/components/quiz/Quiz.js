@@ -1,4 +1,6 @@
-import React from "react";
+import { style } from "@mui/system";
+import React, { useState } from "react";
+import Option from "./Option";
 
 const Quiz = ({
   showQuiz,
@@ -11,6 +13,22 @@ const Quiz = ({
   nextQuestion,
   showTheResult,
 }) => {
+  
+  const [votes,setVotes] = useState([
+    {
+      id: "",
+      votes: ""
+    }
+  ])
+
+  const [clicked,setClicked] = useState(false);
+
+
+  function handleClick(id) {
+    // console.log(id);
+  }
+
+
   return (
     <section
       className="bg-dark text-white"
@@ -21,7 +39,7 @@ const Quiz = ({
           <div className="col-lg-8">
             <div
               className="card p-4"
-              style={{ background: "#3d3d3d", borderColor: "#646464" }}
+              style={{ background: "#3d3d3d", borderColor: "#646464",height: "40em" }}
             >
               <div className="d-flex justify-content-between gap-md-3">
                 <h5 className="mb-2 fs-normal lh-base">{question?.question}</h5>
@@ -37,15 +55,7 @@ const Quiz = ({
               </div>
               <div>
                 {question?.options?.map((item, index) => (
-                  <button
-                    key={index}
-                    className={`option w-100 text-start btn_t text-white py-2 px-3 mt-3 rounded btn-dark ${
-                      correctAnswer === item && "bg-success"
-                    }`}
-                    onClick={(event) => checkAnswer(event, item)}
-                  >
-                    {item}
-                  </button>
+                  <Option item = {item} key = {index} handleClick = {handleClick} id = {index+1}/>
                 ))}
               </div>
 

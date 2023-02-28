@@ -36,15 +36,24 @@ h3 {
 .btn-dark:focus,
 .btn-check:focus + .btn_t,
 .btn_t:focus {
-  border: none;
-  box-shadow: none;
+  display: block;
+    border: none;
+    box-shadow: none;
+    margin: 22px 0 0 10px;
+    width: 93%;
+    height: 82px;
+    border-radius: 5px;
 }
 
 .btn-dark:hover {
-  background: #212529;
+  background: #cdcdcd;
 }
 
 .bg-primary,
 .btn-light {
   letter-spacing: 0.7px;
+}
+
+.selected{
+  background-color: blue;
 }
