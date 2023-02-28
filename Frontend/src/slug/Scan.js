@@ -32,7 +32,7 @@ export default function Scan({ isTicket, setIsticket }) {
       email: data.get("email"),
     });
     setIsticket(true);
-    navigate("/");
+    navigate("/home");
   };
 
   return (

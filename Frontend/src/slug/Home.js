@@ -26,7 +26,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         onClick={() => navigate("/scan")}
         style={{
           width: "100%",
-          borderRadius: "1rem",
+          borderRadius: "3rem",
           marginBottom: "20px",
         }}
       >
