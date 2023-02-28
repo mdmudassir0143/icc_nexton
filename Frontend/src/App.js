@@ -12,14 +12,15 @@ import Recycle from "./slug/Recycle";
 import Fun from "./slug/Fun";
 import Engage from "./slug/Engage";
 import Scan from "./slug/Scan";
-import Modal from "./slug/Modal";
+// import Modal from "./slug/Modal";
 import CustomCanvas from "./slug/Canvas";
-import SignIn from "./slug/Signin";
+// import SignIn from "./slug/Signin";
 import { useState, useEffect } from "react";
 import Login from "./components/authentication/Login";
 import Signup from "./components/authentication/Signup";
 import Cheers from "./slug/Cheers";
 import Dispose from "./slug/Dispose";
+import Camera from "./slug/Camera";
 
 function App() {
   const [logged, isLogged] = useState(false);
@@ -93,12 +94,12 @@ function App() {
             />
           }
         />
-        <Route path="/modal" element={<Modal />} />
-        <Route path="/engage/experience" element={<CustomCanvas />} />
+        {/* <Route path="/modal" element={<Modal />} /> */}
+        <Route path="/modal" element={<CustomCanvas />} />
         <Route path="/cheers" element={<Cheers />} />
-
         <Route path="/dispose" element={<Dispose />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/camera" element={<Camera />} />
       </Routes>
     </div>
   );
