@@ -3,8 +3,19 @@ import Start from "../components/quiz/Start";
 import Quiz from "../components/quiz/Quiz";
 import Result from "../components/quiz/Result";
 import quizQstn from "../assets/quiz/quiz.js";
+import { useNavigate } from "react-router-dom";
 
-function Polls() {
+function Polls({ logged, isTicket, setIsTicket }) {
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (logged) {
+      return navigate("/");
+    }
+    if (isTicket) {
+      return navigate("/scan");
+    }
+  }, [logged]);
   // All Quizs, Current Question, Index of Current Question, Answer, Selected Answer, Total Marks
   const [quizs, setQuizs] = useState(quizQstn);
   const [question, setQuesion] = useState({});

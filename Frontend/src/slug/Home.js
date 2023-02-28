@@ -1,30 +1,21 @@
 import "../assets/css/home.css";
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import { useNavigate } from "react-router-dom";
-import {
-  Typography,
-  Button,
-  Box,
-  IconButton,
-} from "@mui/material";
-
+import { Typography, Button, Box, IconButton } from "@mui/material";
+import { useEffect } from "react";
 import Caurosal from "../components/Caurosal";
 
-export default function Home() {
-  const navigate = useNavigate()
-  return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      padding="5px 20px 20px 20px"
-    >
+export default function Home({ logged, isTicket, setIsTicket }) {
+  let navigate = useNavigate();
 
-      <Typography
-        variant="h5"
-        textAlign="center"
-        p="10px"
-        mb="10px"
-      >
+  useEffect(() => {
+    if (!logged) {
+      return navigate("/");
+    }
+  }, [logged]);
+  return (
+    <Box display="flex" flexDirection="column" padding="5px 20px 20px 20px">
+      <Typography variant="h5" textAlign="center" p="10px" mb="10px">
         Welcome to ICC neXton
       </Typography>
 
@@ -39,9 +30,7 @@ export default function Home() {
           marginBottom: "20px",
         }}
       >
-        <IconButton
-          color="secondary"
-        >
+        <IconButton color="secondary">
           <QrCodeScannerIcon style={{ fontSize: "40px" }} />
         </IconButton>
         Scan Ticket to enter neXton
@@ -49,10 +38,7 @@ export default function Home() {
 
       <Caurosal />
 
-      <Typography
-        variant="h6"
-        m="10px 0px"
-      >
+      <Typography variant="h6" m="10px 0px">
         Stadium interactions
       </Typography>
       <Box
@@ -79,65 +65,33 @@ export default function Home() {
         </Button>
       </Box>
 
-      <Typography
-        variant="h6"
-        m="10px 0px"
-      >
+      <Typography variant="h6" m="10px 0px">
         Earn Rewards
       </Typography>
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap="10px"
-      >
-        <Button
-          variant="contained"
-          onClick={() => navigate("")}
-        >
+      <Box display="flex" flexDirection="column" gap="10px">
+        <Button variant="contained" onClick={() => navigate("")}>
           Dispose and Earn
         </Button>
-        <Button
-          variant="contained"
-          onClick={() => navigate("")}
-        >
+        <Button variant="contained" onClick={() => navigate("")}>
           Participate in Live Polls
         </Button>
-        <Button
-          variant="contained"
-          onClick={() => navigate("")}
-        >
+        <Button variant="contained" onClick={() => navigate("")}>
           Share your social media engagement
         </Button>
       </Box>
 
-      <Typography
-        variant="h6"
-        m="10px 0px"
-      >
+      <Typography variant="h6" m="10px 0px">
         Explore More
       </Typography>
       <Box>
-        <Box
-          display="flex"
-          flexDirection="column"
-          gap="10px"
-        >
-          <Button
-            variant="contained"
-            onClick={() => navigate("")}
-          >
+        <Box display="flex" flexDirection="column" gap="10px">
+          <Button variant="contained" onClick={() => navigate("")}>
             Buy Tickets
           </Button>
-          <Button
-            variant="contained"
-            onClick={() => navigate("")}
-          >
+          <Button variant="contained" onClick={() => navigate("")}>
             Game Schedule
           </Button>
-          <Button
-            variant="contained"
-            onClick={() => navigate("")}
-          >
+          <Button variant="contained" onClick={() => navigate("")}>
             Check Official Merchandise
           </Button>
         </Box>
