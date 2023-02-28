@@ -3,42 +3,31 @@ import Carousel from 'react-material-ui-carousel'
 
 import { Box } from '@mui/material'
 
-import team1 from '../assets/img/team1.jpg'
-import team2 from '../assets/img/team2.jpg'
-import team3 from '../assets/img/team3.jpg'
-// import team4 from '../assets/img/team4.jpg'
-import team5 from '../assets/img/team5.jpg'
-
-const list = [
-    team1,
-    team2,
-    team3,
-    // team4,
-    team5
-]
-
-function Caurosal() {
+function Caurosal({imgList, opac=1, timeInterval = 2000}) {
   return (
     <Box
-        height="15rem"
+        // height="15rem"
     >
         <Carousel
             autoPlay={true}
             animation="fade"
-            interval="2000"
+            interval={timeInterval}
             indicators={false}
-            // navButtonsAlwaysInvisible={true}
+            navButtonsAlwaysInvisible={true}
             sx={{
-                maxHeight: "15rem",
+                maxHeight: "100%",
             }}
         >
-            {list.map((item, i) => (
+            {imgList.map((item, i) => (
                 <img
                     key={i}
                     src={item}
-                    minHeight="100%"
+                    height="100%"
                     width="100%"
                     alt="homeBanner"
+                    style={{
+                        opacity: `${opac}`
+                    }}
                 />
             ))}
         </Carousel>
