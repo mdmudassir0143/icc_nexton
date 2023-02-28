@@ -29,7 +29,7 @@ export default function Engage({ logged, isTicket, setIsTicket }) {
           <Link to="/modal">
             <div className="modal">
               <div className="heading">MODALS</div>
-              <img src={M1} alt="Loading..." />
+              <img src={M3} alt="Loading..." />
             </div>
           </Link>
         </div>
