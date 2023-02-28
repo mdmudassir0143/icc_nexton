@@ -13,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import PageHead from "../components/PageHead";
+
 import { useNavigate } from "react-router-dom";
 const theme = createTheme();
 
@@ -37,9 +39,12 @@ export default function Scan({ isTicket, setIsticket }) {
 
   return (
     <div>
-      <h2>Scan</h2>
+      <PageHead title="Scan Ticket" />
       <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+        <Container 
+          component="main" 
+          maxWidth="xs"
+        >
           <CssBaseline />
           <Box
             sx={{

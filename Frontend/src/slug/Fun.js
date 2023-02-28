@@ -3,7 +3,7 @@ import PageHead from "../components/PageHead";
 
 import M1 from "../assets/img/M1.gif";
 import wteam from "../assets/img/wteam.png";
-import "./fun.css";
+import "../assets/css/fun.css";
 
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +16,9 @@ export default function Fun({ logged, isTicket, setIsTicket }) {
     if (!logged) {
       return navigate("/");
     }
-    if (!isTicket) {
-      return navigate("/scan");
-    }
+    // if (!isTicket) {
+    //   return navigate("/scan");
+    // }
   }, [logged]);
   return (
     <Box>
