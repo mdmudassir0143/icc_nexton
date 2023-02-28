@@ -16,6 +16,8 @@ import Modal from "./slug/Modal";
 import CustomCanvas from "./slug/Canvas";
 import SignIn from "./slug/Signin";
 import { useState, useEffect } from "react";
+import Login from "./components/authentication/Login";
+import Signup from "./components/authentication/Signup";
 
 function App() {
   const [logged, isLogged] = useState(false);
@@ -27,7 +29,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<SignIn logged={logged} setLogged={isLogged} />}
+          element={<Login logged={logged} setLogged={isLogged} />}
         />
         <Route path="/home" element={<Home logged={logged} />} />
         <Route
@@ -87,6 +89,7 @@ function App() {
         />
         <Route path="/modal" element={<Modal />} />
         <Route path="/engage/experience" element={<CustomCanvas />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );
