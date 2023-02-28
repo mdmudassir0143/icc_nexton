@@ -30,7 +30,7 @@ export default function Fun({ logged, isTicket, setIsTicket }) {
         </div>
         <div className="g2">
           <div className="heading">CLAIM YOUR NFT</div>
-          <a href="https://whitelist-dapp-delta-five.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
+          <a href="https://icc-drop.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
         </div>
         <div className="g3">
           <div className="heading">WHITELIST YOUR ADDRESS</div>
