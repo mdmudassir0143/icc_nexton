@@ -2,6 +2,7 @@ import React, { useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import Model from "../components/Model";
+import PageHead from "../components/PageHead";
 // import Background from "../components/Background";
 import axios from "axios";
 
@@ -88,7 +89,9 @@ const CustomCanvas = () => {
   // console.log(activeMove, "Parent");
 
   return (
-    <div className="canvas" style={{ height: "100vh"}}>
+    <>
+    <PageHead title="3D Model" />
+    <div className="canvas" style={{ height: "85vh"}}>
       <Canvas
         ref={canvasRef}
         camera={{ fov: 75, near: 1, far: 1000, position: [0, 0, 5] }}
@@ -103,14 +106,15 @@ const CustomCanvas = () => {
         </Suspense>
       </Canvas>
 
-      <button
+      {/* <button
         id="record-video"
         onClick={() => startRecording()}
         disabled={loading}
       >
         {loading ? "Recording..." : "Download preview video"}
-      </button>
+      </button> */}
     </div>
+    </>
   );
 };
 
