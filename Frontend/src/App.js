@@ -18,6 +18,7 @@ import SignIn from "./slug/Signin";
 import { useState, useEffect } from "react";
 import Login from "./components/authentication/Login";
 import Signup from "./components/authentication/Signup";
+import Dispose from "./slug/Dispose";
 
 function App() {
   const [logged, isLogged] = useState(false);
@@ -35,6 +36,10 @@ function App() {
         <Route
           path="/engage"
           element={<Engage lisTicket={isTicket} setIsticket={setIsticket} />}
+        />
+        <Route
+          path="/engage/experience"
+          element={<CustomCanvas />}
         />
         <Route
           path="/fun"
@@ -88,7 +93,8 @@ function App() {
           }
         />
         <Route path="/modal" element={<Modal />} />
-        <Route path="/engage/experience" element={<CustomCanvas />} />
+
+        <Route path="/dispose" element={<Dispose />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>

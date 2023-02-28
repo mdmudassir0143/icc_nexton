@@ -5,6 +5,12 @@ import { Typography, Button, Box, IconButton } from "@mui/material";
 import { useEffect } from "react";
 import Caurosal from "../components/Caurosal";
 
+import team1 from '../assets/img/team1.jpg'
+import team2 from '../assets/img/team2.jpg'
+import team3 from '../assets/img/team3.jpg'
+// import team4 from '../assets/img/team4.jpg'
+import team5 from '../assets/img/team5.jpg'
+
 export default function Home({ logged, isTicket, setIsTicket }) {
   let navigate = useNavigate();
 
@@ -13,6 +19,9 @@ export default function Home({ logged, isTicket, setIsTicket }) {
       return navigate("/");
     }
   }, [logged]);
+
+  const imgList = [team1, team2, team3, team5];
+
   return (
     <Box display="flex" flexDirection="column" padding="5px 20px 20px 20px">
       <Typography variant="h5" textAlign="center" p="10px" mb="10px">
@@ -36,7 +45,9 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         Scan Ticket to enter neXton
       </Button>
 
-      <Caurosal />
+      <Caurosal 
+        imgList={imgList}
+      />
 
       <Typography variant="h6" m="10px 0px">
         Stadium interactions
@@ -69,7 +80,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         Earn Rewards
       </Typography>
       <Box display="flex" flexDirection="column" gap="10px">
-        <Button variant="contained" onClick={() => navigate("")}>
+        <Button variant="contained" onClick={() => navigate("/dispose")}>
           Dispose and Earn
         </Button>
         <Button variant="contained" onClick={() => navigate("")}>

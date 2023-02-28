@@ -16,9 +16,9 @@ export default function Fun({ logged, isTicket, setIsTicket }) {
     if (!logged) {
       return navigate("/");
     }
-    if (!isTicket) {
-      return navigate("/scan");
-    }
+    // if (!isTicket) {
+    //   return navigate("/scan");
+    // }
   }, [logged]);
   return (
     <Box>
