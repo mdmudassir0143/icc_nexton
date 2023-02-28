@@ -16,7 +16,7 @@ export default function Header() {
       <div className="left">
         {/* <MenuIcon style={{ color: "white" }} fontSize="large" /> */}
         <Button
-          // onClick={() => navigate("/home")}
+          onClick={() => navigate("/home")}
         >
           <img 
             src={logo}
