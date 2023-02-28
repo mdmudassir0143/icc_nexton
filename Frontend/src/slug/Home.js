@@ -58,10 +58,10 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         >
           Dispose and Earn
         </Button>
-        <Button variant="contained" onClick={() => navigate("")}>
+        <Button variant="contained" onClick={() => navigate("/live-polls")}>
           Participate in Live Polls
         </Button>
-        <Button variant="contained" onClick={() => navigate("")}>
+        <Button variant="contained" onClick={() => navigate("/engage-social")}>
           Share your social media engagement
         </Button>
       </Box>
