@@ -49,6 +49,21 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         imgList={imgList}
       />
 
+<Typography variant="h6" m="10px 0px">
+        Earn Rewards
+      </Typography>
+      <Box display="flex" flexDirection="column" gap="10px">
+        <Button variant="contained" size="large" onClick={() => navigate("/dispose")}>
+          Dispose and Earn
+        </Button>
+        <Button variant="contained" onClick={() => navigate("")}>
+          Participate in Live Polls
+        </Button>
+        <Button variant="contained" onClick={() => navigate("")}>
+          Share your social media engagement
+        </Button>
+      </Box>
+      
       <Typography variant="h6" m="10px 0px">
         Stadium interactions
       </Typography>
@@ -73,21 +88,6 @@ export default function Home({ logged, isTicket, setIsTicket }) {
           onClick={() => navigate("/fun")}
         >
           Fun Activities
-        </Button>
-      </Box>
-
-      <Typography variant="h6" m="10px 0px">
-        Earn Rewards
-      </Typography>
-      <Box display="flex" flexDirection="column" gap="10px">
-        <Button variant="contained" onClick={() => navigate("/dispose")}>
-          Dispose and Earn
-        </Button>
-        <Button variant="contained" onClick={() => navigate("")}>
-          Participate in Live Polls
-        </Button>
-        <Button variant="contained" onClick={() => navigate("")}>
-          Share your social media engagement
         </Button>
       </Box>
 

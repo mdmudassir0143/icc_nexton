@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-
+import { useNavigate } from "react-router-dom";
 import PageHead from '../components/PageHead'
 import Caurosal from '../components/Caurosal'
-
+import Camera from './Camera'
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -26,7 +26,7 @@ import rewardImg1 from '../assets/img/rewards1.png'
 import rewardImg2 from '../assets/img/rewards2.png'
 
 function Dispose() {
-
+    let navigate = useNavigate();
     const imgList = [
         rewardImg1,
         rewardImg2
@@ -148,7 +148,7 @@ function Dispose() {
                             </ListItemButton>
                             <Collapse in={openCS} timeout="auto" unmountOnExit>
                                 <List component="div" disablePadding>
-                                    <ListItemButton>
+                                    <ListItemButton onClick={() => navigate("/camera")}>
                                         <Box
                                             display="flex"
                                             flexDirection="column"
