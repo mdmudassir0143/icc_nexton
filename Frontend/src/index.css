@@ -57,3 +57,14 @@ h3 {
 .selected{
   background-color: blue;
 }
+.option{
+  margin: 15px auto;
+  background-color: red;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px 40px;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 15px;
+  text-align: center;
+}

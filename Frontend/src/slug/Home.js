@@ -5,11 +5,11 @@ import { Typography, Button, Box, IconButton } from "@mui/material";
 import { useEffect } from "react";
 import Caurosal from "../components/Caurosal";
 
-import team1 from '../assets/img/team1.jpg'
-import team2 from '../assets/img/team2.jpg'
-import team3 from '../assets/img/team3.jpg'
+import team1 from "../assets/img/team1.jpg";
+import team2 from "../assets/img/team2.jpg";
+import team3 from "../assets/img/team3.jpg";
 // import team4 from '../assets/img/team4.jpg'
-import team5 from '../assets/img/team5.jpg'
+import team5 from "../assets/img/team5.jpg";
 
 export default function Home({ logged, isTicket, setIsTicket }) {
   let navigate = useNavigate();
@@ -45,9 +45,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         Scan Ticket to enter neXton
       </Button>
 
-      <Caurosal 
-        imgList={imgList}
-      />
+      <Caurosal imgList={imgList} />
 
       <Typography variant="h6" m="10px 0px">
         Stadium interactions
@@ -83,7 +81,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         <Button variant="contained" onClick={() => navigate("/dispose")}>
           Dispose and Earn
         </Button>
-        <Button variant="contained" onClick={() => navigate("")}>
+        <Button variant="contained" onClick={() => navigate("/live-polls")}>
           Participate in Live Polls
         </Button>
         <Button variant="contained" onClick={() => navigate("")}>

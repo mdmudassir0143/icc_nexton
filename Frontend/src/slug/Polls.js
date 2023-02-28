@@ -7,12 +7,11 @@ import { useNavigate } from "react-router-dom";
 
 function Polls({ logged, isTicket, setIsTicket }) {
   let navigate = useNavigate();
-
   useEffect(() => {
-    if (logged) {
+    if (!logged) {
       return navigate("/");
     }
-    if (isTicket) {
+    if (!isTicket) {
       return navigate("/scan");
     }
   }, [logged]);
@@ -20,7 +19,7 @@ function Polls({ logged, isTicket, setIsTicket }) {
   const [quizs, setQuizs] = useState(quizQstn);
   const [question, setQuesion] = useState({});
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [correctAnswer, setCorrectAnswer] = useState("");
+  const [correctAnswer, setCorrectAnswer] = useState(1);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [marks, setMarks] = useState(0);
 
@@ -103,25 +102,28 @@ function Polls({ logged, isTicket, setIsTicket }) {
       <Start startQuiz={startQuiz} showStart={showStart} />
 
       {/* Quiz Page */}
-      <Quiz
-        showQuiz={showQuiz}
-        question={question}
-        quizs={quizs}
-        checkAnswer={checkAnswer}
-        correctAnswer={correctAnswer}
-        selectedAnswer={selectedAnswer}
-        questionIndex={questionIndex}
-        nextQuestion={nextQuestion}
-        showTheResult={showTheResult}
-      />
-
-      {/* Result Page */}
-      <Result
-        showResult={showResult}
-        quizs={quizs}
-        marks={marks}
-        startOver={startOver}
-      />
+      {questionIndex + 1 <= quizs.length ? (
+        <Quiz
+          showQuiz={showQuiz}
+          question={question}
+          quizs={quizs}
+          checkAnswer={checkAnswer}
+          correctAnswer={correctAnswer}
+          setCorrectAnswer={setCorrectAnswer}
+          selectedAnswer={selectedAnswer}
+          questionIndex={questionIndex}
+          nextQuestion={nextQuestion}
+          showTheResult={showTheResult}
+          setMarks={setMarks}
+        />
+      ) : (
+        <Result
+          showResult={showResult}
+          quizs={quizs}
+          marks={marks}
+          startOver={startOver}
+        />
+      )}
     </div>
   );
 }
