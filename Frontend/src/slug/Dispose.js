@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageHead from "../components/PageHead";
-import Footer from "../components/Footer";
 import Caurosal from "../components/Caurosal";
 import Camera from "./Camera";
 import ListSubheader from "@mui/material/ListSubheader";
@@ -145,7 +144,6 @@ function Dispose() {
           </Box>
         </Box>
       </Box>
-      <Footer/>
     </Box>
   );
 }

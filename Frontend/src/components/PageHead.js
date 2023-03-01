@@ -16,7 +16,8 @@ function PageHead({title}) {
         alignItems="center"
         gap="1rem"
         p="0.7rem"
-        // marginBottom="5px"
+        marginBottom="1rem"
+        backgroundColor="#E0E4E7"
     >
         <WestIcon
             sx={{

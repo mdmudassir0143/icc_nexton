@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { Box } from "@mui/system";
+
+import { Typography } from "@mui/material";
+
+import PageHead from "../components/PageHead";
 import Start from "../components/quiz/Start";
 import Quiz from "../components/quiz/Quiz";
 import Result from "../components/quiz/Result";
 import quizQstn from "../assets/quiz/quiz.js";
-import { useNavigate } from "react-router-dom";
+
+import triviaImg from "../assets/img/trivia.jpg";
 
 function Polls({ logged, isTicket, setIsTicket }) {
   let navigate = useNavigate();
@@ -97,34 +105,90 @@ function Polls({ logged, isTicket, setIsTicket }) {
   };
 
   return (
-    <div style={{ height: "80vh" }}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      minheight="100vh"
+      height="100%"
+      width="100%"
+      // padding="0 0 2rem 0"
+    >
+      <PageHead title="Live Games" />
       {/* Welcome Page */}
-      <Start startQuiz={startQuiz} showStart={showStart} />
 
-      {/* Quiz Page */}
-      {questionIndex + 1 <= quizs.length ? (
-        <Quiz
-          showQuiz={showQuiz}
-          question={question}
-          quizs={quizs}
-          checkAnswer={checkAnswer}
-          correctAnswer={correctAnswer}
-          setCorrectAnswer={setCorrectAnswer}
-          selectedAnswer={selectedAnswer}
-          questionIndex={questionIndex}
-          nextQuestion={nextQuestion}
-          showTheResult={showTheResult}
-          setMarks={setMarks}
+      <Box
+        height="20rem"
+        display="flex"
+        justifyContent="center"
+        alignItems="flex-start"
+        marginTop="-1rem"
+        backgroundColor="#FFC854"
+      >
+        <img
+          src={triviaImg}
+          alt="trivia"
+          // height="80%"
+          width="65%"
+          style={{
+            aspectRatio: "1/1",
+          }}
         />
-      ) : (
-        <Result
-          showResult={showResult}
-          quizs={quizs}
-          marks={marks}
-          startOver={startOver}
-        />
-      )}
-    </div>
+      </Box>
+      <Box
+        position="relative"
+        marginTop="-4.5rem"
+        borderRadius="3rem 3rem 0 0"
+        backgroundColor="#dddddd"
+        zIndex="10"
+        height="90%"
+      >
+        <Typography
+          p="0.4rem"
+          variant="h5"
+          // fontWeight="bold"
+          color="#565864"
+          textAlign="center"
+        >
+          Lets Play a Trivia
+        </Typography>
+        <Box
+          height="100%"
+          padding="1rem 2rem"
+          backgroundColor="white"
+          borderRadius="3rem 3rem 0 0"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Start startQuiz={startQuiz} showStart={showStart} />
+          {/* Quiz Page */}
+          {questionIndex + 1 <= quizs.length ? (
+            <Quiz
+              showQuiz={showQuiz}
+              question={question}
+              quizs={quizs}
+              checkAnswer={checkAnswer}
+              correctAnswer={correctAnswer}
+              setCorrectAnswer={setCorrectAnswer}
+              selectedAnswer={selectedAnswer}
+              questionIndex={questionIndex}
+              nextQuestion={nextQuestion}
+              showTheResult={showTheResult}
+              setMarks={setMarks}
+            />
+          ) : (
+            <Result
+              showResult={showResult}
+              quizs={quizs}
+              marks={marks}
+              startOver={startOver}
+            />
+          )}
+        </Box>
+
+      </Box>
+    </Box>
   );
 }
 
