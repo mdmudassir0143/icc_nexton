@@ -10,16 +10,11 @@ const Start = ({ startQuiz, showStart }) => {
         justifyContent="center"
         alignItems="center"
         paddingTop="1rem"
-        height="50%"
       >
         <Button
           variant="contained"
           type="submit"
           onClick={startQuiz}
-          sx={{
-            padding: "0.7rem",
-            fontSize: "1rem",
-          }}
         >
           Start Trivia
         </Button>

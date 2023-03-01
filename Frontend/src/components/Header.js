@@ -1,5 +1,5 @@
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import "../assets/css/header.css";
@@ -17,19 +17,12 @@ export default function Header() {
         {/* <MenuIcon style={{ color: "white" }} fontSize="large" /> */}
         <Button
           onClick={() => navigate("/home")}
-          style={{ 
-            color: "white",
-            gap: "0.5rem", 
-          }}
         >
           <img 
             src={logo}
             alt="logo"
             style={{ width: "40px", height: "40px" }}
           />
-          <Typography>
-            ICC Nexton
-          </Typography>
         </Button>
       </div>
       <div className="right">

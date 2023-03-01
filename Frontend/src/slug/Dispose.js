@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import PageHead from "../components/PageHead";
 import Caurosal from "../components/Caurosal";
 import Camera from "./Camera";
+import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -21,7 +22,7 @@ import garbage from "../assets/img/garbage.png";
 
 function Dispose() {
   let navigate = useNavigate();
-  //   const imgList = [garbage];
+//   const imgList = [garbage];
 
   const [openYS, setOpenYS] = useState(false);
   const [openCS, setOpenCS] = useState(false);
@@ -37,82 +38,58 @@ function Dispose() {
   };
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      minheight="100vh"
-    >
+    <Box>
       <PageHead title="Dispose and Earn" />
-      <Box
-        height="10rem"
-        display="flex"
-        justifyContent="center"
-        alignItems="flex-start"
-        marginTop="-2rem"
-        backgroundColor="#6CA6E5"
-        minHeight="58vh"
-        zIndex="-1"
-      >
-        <img
-          src={rewardImg2}
-          alt="garbage"
-          // height="80%"
-          width="80%"
-          style={{
-            aspectRatio: "1/1",
-          }}
-        />
-      </Box>
-      <Box
-        position="relative"
-        marginTop="-4.5rem"
-        borderRadius="3rem 3rem 0 0"
-        backgroundColor="#dddddd"
-        zIndex="10"
-        height="90%"
-      >
-        <Typography
-          p="0.5rem 1.5rem"
-          variant="h5"
-          // fontWeight="bold"
-          color="#565864"
-          textAlign="center"
-        >
-          Dispose Trash and Earn Rewards
-        </Typography>
-        <Box
-          minHeight="12rem"
-          height="100%"
-          padding="1rem 2rem"
-          backgroundColor="white"
-          borderRadius="3rem 3rem 0 0"
+      <Box backgroundColor="white" minHeight="82.5vh">
+        <Box>
+          <Box height="20rem" 
           display="flex"
-          flexDirection="column"
+          justifyContent="center"
+          >
+            {/* <Caurosal
+                            timeInterval={2500}
+                            imgList={imgList}
+                            opac="0.3"
+                        /> */}
+            <img
+            border="2px solid black"
+              src={garbage}
+              height="100%"
+              // width="100%"
+              alt="loginImage"
+            />
+          </Box>
+          {/* <Typography
+                        marginTop="-3rem"
+                        padding="2rem"
+                        variant="h5"
+                        textAlign="center"
+                        position="relative"
+                        zIndex="2"
+                    >
+                        Enhance your experience by keeping the venue clean.
+                        <br />
+                        &
+                        <br />
+                        Get Rewarded !!
+                    </Typography> */}
+        </Box>
+        <Box
+          position="relative"
+          display="flex"
           justifyContent="center"
           alignItems="center"
+          width="100%"
+          zIndex="3"
         >
-          <Typography
-            textAlign="justify"
-          >
-            Keep the venue clean and tidy by disposing the trash in the bins provided. You can deposit the trash yourself or call the staff for cleaning.
-          </Typography>
-          <Box 
-            marginTop=".5rem" 
-            width="100%"
-          >
+          <Box marginTop=".5rem" width="90%">
             <List
               sx={{
                 width: "100%",
-                gap: "1rem",
               }}
               component="nav"
             >
-              <ListItemButton 
-                onClick={handleClickYS}
-                sx={{
-                  borderBottom: "1px solid #565864",
-                }}
-              >
+              <ListItemButton onClick={handleClickYS}>
                 <ListItemText
                   primary="Deposit Trash Yourself"
                   sx={{
@@ -123,72 +100,41 @@ function Dispose() {
               </ListItemButton>
               <Collapse in={openYS} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItemButton
-                    style={{
-                      // display: "flex",
-                      // flexDirection: "column",
-                      backgroundColor: "#ffb6c170",
-                      borderRadius: "0 0 3rem 3rem",
-                      gap: "1rem",
-                    }}
-                  >
+                  <ListItemButton>
                     <Box
                       display="flex"
                       flexDirection="column"
                       justifyContent="center"
                       alignItems="center"
-                    // backgroundColor="#ffb6c170"
-                    // borderRadius="0 0 3rem 3rem"
+                      backgroundColor="#ffb6c170"
+                      borderRadius="0 0 3rem 3rem"
                     >
                       <img src={disposeImg1} alt="disposeImg1" width="80%" />
-                      {/* <Typography variant="h6" textAlign="center">
+                      <Typography variant="h6" textAlign="center">
                         Deposit Your Trash
-                      </Typography> */}
-                    </Box>
-                    <Box>
-                      <Typography>
-                        Deposit the trash in the bins provided and scan the QR code on the bin to earn rewards.
                       </Typography>
                     </Box>
                   </ListItemButton>
                 </List>
               </Collapse>
-              <ListItemButton 
-                onClick={handleClickCS}
-                sx={{
-                  borderBottom: "1px solid #565864",
-                }}
-              >
+              <ListItemButton onClick={handleClickCS}>
                 <ListItemText primary="Call Staff for Cleaning" />
                 {openCS ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
               <Collapse in={openCS} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItemButton
-                    onClick={() => navigate("/camera")}
-                    style={{
-                      display: "flex",
-                      // flexDirection: "column",
-                      backgroundColor: "#ffb6c170",
-                      borderRadius: "0 0 3rem 3rem",
-                    }}
-                  >
+                  <ListItemButton onClick={() => navigate("/camera")}>
                     <Box
                       display="flex"
                       flexDirection="column"
                       justifyContent="center"
                       alignItems="center"
-                    // backgroundColor="#ffb6c170"
-                    // borderRadius="0 0 3rem 3rem"
+                      backgroundColor="#ffb6c170"
+                      borderRadius="0 0 3rem 3rem"
                     >
                       <img src={disposeImg3} alt="disposeImg1" width="80%" />
-                      {/* <Typography variant="h6" textAlign="center">
+                      <Typography variant="h6" textAlign="center">
                         Call Staff
-                      </Typography> */}
-                    </Box>
-                    <Box>
-                      <Typography>
-                        Upload a photo of the location and the trash to call the staff member.
                       </Typography>
                     </Box>
                   </ListItemButton>
