@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import React from "react";
+import PageHead from "../components/PageHead";
+
 // import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
-import PageHead from "../components/PageHead";
 
 export default function Social({ isTicket, setIsTicket }) {
   return (

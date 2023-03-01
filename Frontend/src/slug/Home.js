@@ -74,19 +74,19 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         <Button
           variant="contained"
           size="large"
-          onClick={() => navigate("/dispose")}
+          onClick={() => navigate("/rewards/dispose")}
         >
           Dispose and Earn
         </Button>
         <Button
           variant="contained"
-          onClick={() => navigate("/live-polls")}
+          onClick={() => navigate("/rewards/polls")}
         >
           Participate in Live Polls
         </Button>
         <Button
           variant="contained"
-          onClick={() => navigate("/engage-social")}
+          onClick={() => navigate("/rewards/social")}
         >
           Share your social media engagement
         </Button>
@@ -109,7 +109,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
           variant="contained"
           width="40%"
           m="25px"
-          onClick={() => navigate("/engage")}
+          onClick={() => navigate("/interactions/fan-movements")}
         >
           Engage Fan movement
         </Button>
@@ -117,7 +117,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         <Button
           variant="contained"
           width="40%"
-          onClick={() => navigate("/fun")}
+          onClick={() => navigate("/interactions/fun-activities")}
         >
           Fun Activities
         </Button>
