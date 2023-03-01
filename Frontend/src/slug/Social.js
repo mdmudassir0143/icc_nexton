@@ -2,14 +2,15 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 import PageHead from "../components/PageHead";
+import Footer from "../components/Footer";
 
 export default function Social({ isTicket, setIsTicket }) {
   return (
     <>
       <PageHead title="Social Endorsements" />
-      <div style={{ maxWidth: "80%", width: "500px", margin: "auto" }}>
-        <p style={{ margin: "10px 0", lineHeight: "2", textAlign: "justify" }}>
-          Get starred on stadium screen. Post yourself with #icc2023 and
+      <div style={{ maxWidth: "100%", width: "500px", margin: "auto" ,background:"white"}}>
+        <p style={{ margin: "10px 20px", lineHeight: "2", textAlign: "center" }}>
+          Get starred ⭐ on stadium screen. <br /> Post yourself with #icc2023 and
           #zor_se_bol
         </p>
         <h2
@@ -70,6 +71,7 @@ export default function Social({ isTicket, setIsTicket }) {
           ></div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
