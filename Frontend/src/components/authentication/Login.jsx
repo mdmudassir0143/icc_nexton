@@ -68,7 +68,6 @@ function Login({ logged, setLogged }) {
               variant="h6"
               // fontWeight="bold"
               textAlign="center"
-              textTransform="capitalize"
             >
               Login to your account
             </Typography>
@@ -146,7 +145,7 @@ function Login({ logged, setLogged }) {
                 label="Password"
                 type="password"
                 variant='outlined'
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 sx={{
                   margin: "0",
                   width: "90%",
@@ -178,8 +177,7 @@ function Login({ logged, setLogged }) {
                   href="/signup"
                   style={{
                     marginLeft: "0.2rem",
-                    color:"#565864",
-                    textDecoration: "underline",
+                    color:"#565864"
                   }}
                 >
                   Signup here
