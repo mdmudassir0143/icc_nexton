@@ -3,12 +3,35 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 import PageHead from "../components/PageHead";
+import P1 from "../assets/img/ud1.png"
+import P2 from "../assets/img/ud2.png"
+import P3 from "../assets/img/ud3.png"
+import P4 from "../assets/img/ud4.png"
+import P5 from "../assets/img/ud5.jpeg"
+import CheerComp from "../components/CheerComp";
 
 export default function Social({ isTicket, setIsTicket }) {
+  const imgList = [
+    {
+      src: P1,
+    },
+    {
+      src: P2,
+    },
+    {
+      src: P3,
+    },
+    {
+      src: P4,
+    },
+    {
+      src: P5,
+    }
+  ];
   return (
     <Box>
       <PageHead title="Social Endorsements" />
-      <div style={{ maxWidth: "100%", width: "500px", margin: "auto" ,background:"white"}}>
+      <div style={{ maxWidth: "100%", width: "500px", margin: "auto", background: "white" }}>
         <p style={{ margin: "10px 20px", lineHeight: "2", textAlign: "center" }}>
           Get starred ⭐ on stadium screen. <br /> Post yourself with #icc2023 and
           #zor_se_bol
@@ -18,58 +41,20 @@ export default function Social({ isTicket, setIsTicket }) {
         >
           Our highlights
         </h2>
-        <div
-          className="social-posts"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+        <Box
+          display="flex"
+          flexDirection="column"
+          backgroundColor="white"
         >
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "gray",
-              margin: "20px",
-            }}
-          ></div>
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "gray",
-              margin: "20px",
-            }}
-          ></div>
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "gray",
-              margin: "20px",
-            }}
-          ></div>
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "gray",
-              margin: "20px",
-            }}
-          >
-          </div>
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "gray",
-              margin: "20px",
-            }}
-          ></div>
-        </div>
+          {imgList.map((item, i) => (
+            <CheerComp
+              key={i}
+              title={item.title}
+              imgSrc={item.src}
+              height = "280px"
+            />
+          ))}
+        </Box>
       </div>
     </Box>
   );
