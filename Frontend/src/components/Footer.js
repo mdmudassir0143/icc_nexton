@@ -1,19 +1,22 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
 
-function PageHead() {
+export default function Footer() {
   return (
     <Box
-        borderTop="2px solid black"
-        padding="0.4rem"
+      borderTop="1px solid black"
+      padding="0.4rem"
+      position="relative"
+      bottom="0"
+      zIndex="10"
+      // backgroundColor= "#1565C0"
+      color="#565864"
     >
-        <Typography
-            align='center'
-        >
-           © {new Date().getFullYear()} | Made with ❤️ by Code Rushers
-        </Typography>
+      <Typography
+        align='center'
+      >
+        © 2023 | Made with ❤️ by Code Rushers
+      </Typography>
     </Box>
   )
 }
-
-export default PageHead

@@ -5,7 +5,7 @@ import M3 from "../assets/img/king-kohli.gif"
 import { Box } from "@mui/system";
 import CheerComp from "../components/CheerComp";
 import PageHead from "../components/PageHead";
-import Footer from "../components/Footer";
+
 export default function Cheers() {
   const newLocal = "heading";
   const imgList = [
@@ -56,7 +56,6 @@ export default function Cheers() {
           />
         ))}
       </Box>
-      <Footer/>
     </Box>
   );
 }

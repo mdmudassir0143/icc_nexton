@@ -1,12 +1,12 @@
+import { Box } from "@mui/material";
 import React from "react";
 // import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 import PageHead from "../components/PageHead";
-import Footer from "../components/Footer";
 
 export default function Social({ isTicket, setIsTicket }) {
   return (
-    <>
+    <Box>
       <PageHead title="Social Endorsements" />
       <div style={{ maxWidth: "100%", width: "500px", margin: "auto" ,background:"white"}}>
         <p style={{ margin: "10px 20px", lineHeight: "2", textAlign: "center" }}>
@@ -71,7 +71,6 @@ export default function Social({ isTicket, setIsTicket }) {
           ></div>
         </div>
       </div>
-      <Footer/>
-    </>
+    </Box>
   );
 }
