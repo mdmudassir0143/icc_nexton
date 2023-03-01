@@ -75,7 +75,7 @@ export default function Scan({ isTicket, setIsticket }) {
               // fontWeight="bold"
               textAlign="center"
             >
-              Enter Ticket
+              Enter Your Ticket
             </Typography>
           </Box>
           <Box

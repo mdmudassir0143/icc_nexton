@@ -2,22 +2,26 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageHead from "../components/PageHead";
-import Caurosal from "../components/Caurosal";
-import Camera from "./Camera";
+
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
+
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
-import { IconButton, Typography } from "@mui/material";
-import { Block, ExpandLess, ExpandMore } from "@mui/icons-material";
+import {  
+  Typography 
+} from "@mui/material";
+import {  
+  ExpandLess, 
+  ExpandMore 
+} from "@mui/icons-material";
 import { Box } from "@mui/system";
 
 import disposeImg1 from "../assets/img/dispose1.png";
 import disposeImg3 from "../assets/img/dispose3.png";
-import rewardImg1 from "../assets/img/rewards1.png";
+// import rewardImg1 from "../assets/img/rewards1.png";
 import rewardImg2 from "../assets/img/rewards2.png";
-import garbage from "../assets/img/garbage.png";
+// import garbage from "../assets/img/garbage.png";
 
 function Dispose() {
   let navigate = useNavigate();
