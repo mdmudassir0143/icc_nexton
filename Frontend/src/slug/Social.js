@@ -50,7 +50,7 @@ export default function Social({ isTicket, setIsTicket }) {
         alignItems="flex-start"
         marginTop="-1.2rem"
         backgroundColor="#6CA6E5"
-        minHeight="55vh"
+        minHeight="50vh"
         zIndex="-1"
       >
         <img

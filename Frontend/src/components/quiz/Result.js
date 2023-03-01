@@ -16,19 +16,20 @@ const Result = ({ showResult, quizs, marks, startOver }) => {
           variant="h6"
           fontWeight="bold"
         >
-          Scores Out
+          {/* Scores Out */}
+          Wait for the Results... <br /> Rewards will be added after results.
         </Typography>
-        <Typography
+        {/* <Typography
           textAlign="center"
           variant="h6"
           color={marks > (quizs.length * 5) / 2 ? "success" : "error"}
         >
           {marks > (quizs.length * 5) / 2 ? "Awesome!" : "Oops!"}, Your score is {marks} out of {quizs.length * 5}
-        </Typography>
+        </Typography> */}
         <Button
           onClick={startOver}
           variant="contained"
-          color="error"
+          color="success"
         >
           Start Over
         </Button>

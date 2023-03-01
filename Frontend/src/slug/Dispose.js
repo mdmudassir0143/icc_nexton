@@ -50,7 +50,7 @@ function Dispose() {
         alignItems="flex-start"
         marginTop="-2rem"
         backgroundColor="#6CA6E5"
-        minHeight="58vh"
+        minHeight="50vh"
         zIndex="-1"
       >
         <img
