@@ -20,15 +20,20 @@ export default function Home({ logged, isTicket, setIsTicket }) {
     }
   }, [logged]);
 
-  const imgList = [team1, team2, team3,team4, team5];
+  const imgList = [team1, team2, team3, team4, team5];
 
   return (
-    <Box 
-      display="flex" 
-      flexDirection="column" 
+    <Box
+      display="flex"
+      flexDirection="column"
       padding="1rem 1rem 3rem 1rem"
+      gap="1rem"
     >
-      <Typography variant="h5" textAlign="center" p="10px" mb="10px">
+      <Typography 
+        variant="h5" 
+        textAlign="center" 
+        p="10px"
+      >
         Welcome to ICC neXton
       </Typography>
 
@@ -54,39 +59,57 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         <Caurosal imgList={imgList} />
       </Box>
 
-      <Typography variant="h6" m="10px 0px">
-        Earn Rewards
-      </Typography>
-      <Box display="flex" flexDirection="column" gap="10px">
+
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap="10px"
+      >
+        <Typography
+          variant="h6"
+          m="5px 0"
+        >
+          Earn Rewards
+        </Typography>
         <Button
           variant="contained"
           size="large"
-          onClick={() => navigate("/dispose")}
+          onClick={() => navigate("/rewards/dispose")}
         >
           Dispose and Earn
         </Button>
-        <Button variant="contained" onClick={() => navigate("/live-polls")}>
+        <Button
+          variant="contained"
+          onClick={() => navigate("/rewards/polls")}
+        >
           Participate in Live Polls
         </Button>
-        <Button variant="contained" onClick={() => navigate("/engage-social")}>
+        <Button
+          variant="contained"
+          onClick={() => navigate("/rewards/social")}
+        >
           Share your social media engagement
         </Button>
       </Box>
 
-      <Typography variant="h6" m="10px 0px">
-        Stadium interactions
-      </Typography>
       <Box
         display="flex"
+        flexDirection="column"
         width="100%"
         justifyContent="space-between"
         gap="10px"
       >
+        <Typography
+          variant="h6"
+          m="5px 0"
+        >
+          Stadium Interactions
+        </Typography>
         <Button
           variant="contained"
           width="40%"
           m="25px"
-          onClick={() => navigate("/engage")}
+          onClick={() => navigate("/interactions/fan-movements")}
         >
           Engage Fan movement
         </Button>
@@ -94,27 +117,41 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         <Button
           variant="contained"
           width="40%"
-          onClick={() => navigate("/fun")}
+          onClick={() => navigate("/interactions/fun-activities")}
         >
           Fun Activities
         </Button>
       </Box>
 
-      <Typography variant="h6" m="10px 0px">
-        Explore More
-      </Typography>
-      <Box>
-        <Box display="flex" flexDirection="column" gap="10px">
-          <Button variant="contained" onClick={() => navigate("")}>
-            Game Schedule
-          </Button>
-          <Button variant="contained" onClick={() => navigate("")}>
-            Buy Tickets
-          </Button>
-          <Button variant="contained" onClick={() => navigate("")}>
-            Check Official Merchandise
-          </Button>
-        </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap="10px"
+      >
+        <Typography
+          variant="h6"
+          m="5px 0"
+        >
+          Explore More
+        </Typography>
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Game Schedule
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Buy Tickets
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => navigate("")}
+        >
+          Check Official Merchandise
+        </Button>
       </Box>
     </Box>
   );
