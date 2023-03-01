@@ -2,6 +2,8 @@ import { style } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import Option from "./Option";
 
+import { Box, Button, Typography } from "@mui/material";
+
 const Quiz = ({
   showQuiz,
   question,
@@ -23,6 +25,7 @@ const Quiz = ({
 
   const [clicked, setClicked] = useState(false);
   let [selectedOption, setSelectedOption] = useState(null);
+  const [timer, setTimer] = useState(10);
 
   function handleOptionSelect(id, selected, ans) {
     Array.from(document.querySelectorAll(".option")).map(
@@ -32,7 +35,6 @@ const Quiz = ({
       "yellow";
     setSelectedOption(id);
   }
-  const [timer, setTimer] = useState(10);
 
   useEffect(() => {
     let int_id;
@@ -46,25 +48,41 @@ const Quiz = ({
         Array.from(document.querySelectorAll(".option"))[
           selectedOption
         ].style.backgroundColor = "Green";
+        Array.from(document.querySelectorAll(".option"))[
+          selectedOption
+        ].style.color = "white";
         setMarks((prev) => prev + 5);
       } else {
         if (selectedOption)
           Array.from(document.querySelectorAll(".option"))[
             selectedOption
           ].style.backgroundColor = "red";
+        Array.from(document.querySelectorAll(".option"))[
+          selectedOption
+        ].style.color = "white";
+        Array.from(document.querySelectorAll(".option"))[
+          question.options.indexOf(question.answer)
+        ].style.backgroundColor = "Green";
+        Array.from(document.querySelectorAll(".option"))[
+          question.options.indexOf(question.answer)
+        ].style.color = "white";
       }
       setTimeout(() => {
         nextQuestion();
         // if (selectedOption)
         Array.from(document.querySelectorAll(".option")).map(
-          (item) => (item.style.backgroundColor = "white")
-        );
+          (item) => (resetOptions(item)));
         setSelectedOption(null);
         setTimer(10);
       }, 1000);
     }
     return () => clearInterval(int_id);
   }, [timer]);
+
+  const resetOptions = (item) => {
+    item.style.backgroundColor = ""
+    item.style.color = ""
+  }
 
   return (
     <section
@@ -80,19 +98,14 @@ const Quiz = ({
             Answer in {timer} sec
           </div>
           <div className="col-lg-8">
-            <div className="card p-4" style={{}}>
-              <div className="d-flex justify-content-between gap-md-3">
-                <h5
-                  className="mb-2 fs-normal lh-base"
-                  style={{
-                    width: "",
-                    textAlign: "center",
-                    fontSize: "21px",
-                    marginLeft: "5%",
-                  }}
+              <Box>
+                <Typography
+                  variant="h6"
+                  textAlign="center"
+                  fontWeight="bold"
                 >
                   {question?.question}
-                </h5>
+                </Typography>
                 {/* <h5
                   style={{
                     color: "#60d600",
@@ -102,40 +115,58 @@ const Quiz = ({
                 >
                   {quizs.indexOf(question) + 1} / {quizs?.length}
                 </h5> */}
-              </div>
-              <div>
-                {question?.options?.map((item, index) => (
-                  <div
-                    className="option"
-                    key={index}
-                    onClick={() =>
-                      handleOptionSelect(index, item, question.answer)
-                    }
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  padding="1rem"
+                  gap="1rem"
+                >
+                  {question?.options?.map((item, index) => (
+                    <Button
+                      variant="outlined"
+                      className="option"
+                      key={index}
+                      onClick={() =>
+                        handleOptionSelect(index, item, question.answer)
+                      }
+                    >
+                      {item}
+                    </Button>
+                  ))}
+                </Box>
 
-              {console.log(questionIndex, quizs.length, "end")}
-              {questionIndex + 1 < quizs.length ? (
-                <button
-                  className="btn_t py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                  onClick={nextQuestion}
-                  disabled={!selectedAnswer}
+                {console.log(questionIndex, quizs.length, "end")}
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  padding="1rem 0"
                 >
-                  Next Question
-                </button>
-              ) : (
-                <button
-                  className="btn_t py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                  onClick={showTheResult}
-                  disabled={!selectedAnswer}
-                >
-                  Show Result
-                </button>
-              )}
-            </div>
+                  {questionIndex + 1 < quizs.length ? (
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={nextQuestion}
+                      disabled={!selectedAnswer}
+                    >
+                      Next Question
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={showTheResult}
+                      disabled={!selectedAnswer}
+                    >
+                      Show Result
+                    </Button>
+                  )}
+                </Box>
+              </Box>
+            
           </div>
         </div>
       </div>
