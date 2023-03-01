@@ -109,8 +109,6 @@ function Polls({ logged, isTicket, setIsTicket }) {
       display="flex"
       flexDirection="column"
       minheight="100vh"
-      height="100%"
-      width="100%"
       // padding="0 0 2rem 0"
     >
       <PageHead title="Live Games" />
@@ -152,6 +150,7 @@ function Polls({ logged, isTicket, setIsTicket }) {
           Lets Play a Trivia
         </Typography>
         <Box
+          minHeight="12rem"
           height="100%"
           padding="1rem 2rem"
           backgroundColor="white"
@@ -162,6 +161,7 @@ function Polls({ logged, isTicket, setIsTicket }) {
           alignItems="center"
         >
           <Start startQuiz={startQuiz} showStart={showStart} />
+          
           {/* Quiz Page */}
           {questionIndex + 1 <= quizs.length ? (
             <Quiz
