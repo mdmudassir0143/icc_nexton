@@ -1,6 +1,6 @@
 import React from "react";
 import PageHead from "../components/PageHead";
-
+import Footer from "../components/Footer"
 import M1 from "../assets/img/M1.gif";
 import wteam from "../assets/img/wteam.png";
 import nftdrop from "../assets/img/nftdrop.png";
@@ -38,6 +38,7 @@ export default function Fun({ logged, isTicket, setIsTicket }) {
           <a href="https://whitelist-dapp-delta-five.vercel.app/" target={"_blank"}><img src={wteam} alt="Loading..." /></a>
         </div>
       </Box>
+      <Footer/>
     </Box>
   );
 }

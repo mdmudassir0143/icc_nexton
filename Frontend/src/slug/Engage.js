@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageHead from "../components/PageHead";
-
+import Footer from "../components/Footer";
 import "../assets/css/engage.css";
 import M1 from "../assets/img/M1.gif";
 import M2 from "../assets/img/cheers.gif";
@@ -42,6 +42,7 @@ export default function Engage({ logged, isTicket, setIsTicket }) {
           </Link>
         </div>
       </Box>
+      <Footer/>
     </Box>
   );
 }

@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { Typography, Button, Box, IconButton } from "@mui/material";
 import { useEffect } from "react";
 import Caurosal from "../components/Caurosal";
+import Footer from "../components/Footer"
 
 import team1 from "../assets/img/team1.jpg";
 import team2 from "../assets/img/team2.jpg";
 import team3 from "../assets/img/team3.jpg";
-// import team4 from '../assets/img/team4.jpg'
+import team4 from '../assets/img/team4.jpg'
 import team5 from "../assets/img/team5.jpg";
 
 export default function Home({ logged, isTicket, setIsTicket }) {
@@ -20,9 +21,10 @@ export default function Home({ logged, isTicket, setIsTicket }) {
     }
   }, [logged]);
 
-  const imgList = [team1, team2, team3, team5];
+  const imgList = [team1, team2, team3,team4, team5];
 
   return (
+    <>
     <Box display="flex" flexDirection="column" padding="5px 20px 20px 20px">
       <Typography variant="h5" textAlign="center" p="10px" mb="10px">
         Welcome to ICC neXton
@@ -110,5 +112,7 @@ export default function Home({ logged, isTicket, setIsTicket }) {
         </Box>
       </Box>
     </Box>
+      <Footer/>
+      </>
   );
 }
