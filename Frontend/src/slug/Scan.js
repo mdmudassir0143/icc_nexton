@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import PageHead from "../components/PageHead";
+import ticketImg from "../assets/img/ticket.png";
 
 import { useNavigate } from "react-router-dom";
 const theme = createTheme();
@@ -38,51 +39,94 @@ export default function Scan({ isTicket, setIsticket }) {
   };
 
   return (
-    <div>
+    <Box
+      minHeight="84vh"
+    >
       <PageHead title="Scan Ticket" />
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 8,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+      <Box
+        display="flex"
+        flexDirection="column"
+        height="100%"
+        width="100%"
+        backgroundColor="#1b2430"
+        marginTop="-1rem"
+      >
+        <Box
+          height="50%"
+          display="flex"
+          justifyContent="center"
+          alignItems="flex-start"
+        >
+          <img
+            src={ticketImg}
+            // height="80%"
+            width="60%"
+            alt='TicketImage'
+            style={{
+              aspectRatio: "1/1",
             }}
+          />
+        </Box>
+        <Box
+          height="90%"
+        >
+          <Box
+            height="10rem"
+            borderRadius="3rem 3rem 0 0"
+            backgroundColor="#dddddd"
+            color="#565864"
+            zIndex="1"
           >
-            <Typography component="h1" variant="h5">
-              Enter ticket
+            <Typography
+              p="0.4rem"
+              variant="h6"
+              // fontWeight="bold"
+              textAlign="center"
+            >
+              Enter Ticket
             </Typography>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            height="100%"
+            width="100%"
+            backgroundColor="white"
+            zIndex="2"
+            mt="-7rem"
+            borderRadius="3rem 3rem 0 0"
+            p="2rem"
+          >
             <Box
               component="form"
               onSubmit={handleSubmit}
-              noValidate
-              sx={{ mt: 1 }}
+              width="70%"
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gap="1rem"
             >
               <TextField
-                margin="normal"
-                required
-                fullWidth
+                // required
                 id="email"
                 label="Ticket Number"
                 name="email"
                 autoComplete="email"
                 autoFocus
               />
-
               <Button
                 type="submit"
-                fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
               >
                 Register Ticket
               </Button>
             </Box>
           </Box>
-        </Container>
-      </ThemeProvider>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
