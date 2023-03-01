@@ -26,7 +26,7 @@ export default function Engage({ logged, isTicket, setIsTicket }) {
       <PageHead title="Engage Fan Movements" />
       <Box backgroundColor="#FAFAFA">
         <div className="left">
-          <Link to="/interactions/modal">
+          <Link to="/modal">
             <div className="modal">
               <div className="heading">MODALS</div>
               <img src={M3} alt="Loading..." />
@@ -34,7 +34,7 @@ export default function Engage({ logged, isTicket, setIsTicket }) {
           </Link>
         </div>
         <div className="righ">
-          <Link to="/interactions/cheers">
+          <Link to="/cheers">
             <div className="chant">
               <div className="heading">CHEERS</div>
               <img src={M2} alt="Loading..." />
