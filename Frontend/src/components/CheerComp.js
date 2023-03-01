@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
 
-export default function CheerComp({title, imgSrc}){
+export default function CheerComp({title, imgSrc, height = "250rem"}){
     return (
         <Box
         display = "flex"
@@ -25,9 +25,10 @@ export default function CheerComp({title, imgSrc}){
                 <img 
                 src = {imgSrc}
                 alt = {title}
-                height = "250rem"
+                height = {height}
                 style={{
-                    borderRadius: "2rem"
+                    borderRadius: "2rem",
+                    aspectRatio: "1/1"
                 }}
                 />
             </Box>
