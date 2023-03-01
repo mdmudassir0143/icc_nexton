@@ -116,7 +116,7 @@ function Login({ logged, setLogged }) {
                 </IconButton>
               </Box>
               <Typography
-                color="lightgrey"
+                color="#565864"
                 variant="h7"
                 textAlign="center"
               >
