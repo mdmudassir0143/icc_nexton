@@ -124,6 +124,7 @@ function Dispose() {
               <Collapse in={openYS} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                   <ListItemButton
+                    onClick={() => navigate("/disposeyourself")}
                     style={{
                       // display: "flex",
                       // flexDirection: "column",

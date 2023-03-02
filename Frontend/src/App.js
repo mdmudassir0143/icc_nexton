@@ -19,10 +19,11 @@ import Signup from "./components/authentication/Signup";
 import Cheers from "./slug/Cheers";
 import Dispose from "./slug/Dispose";
 import Camera from "./slug/Camera";
+import DustbinCamera from "./slug/DustbinCamera"
+import DisposeYourself from "./slug/DisposeYourself";
 import Footer from "./components/Footer";
 
 function App() {
-
   const [logged, isLogged] = useState(false);
   const [isTicket, setIsticket] = useState(false);
   let navigate = useNavigate();
@@ -31,16 +32,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-
         <Route
           path="/"
           element={<Login logged={logged} setLogged={isLogged} />}
         />
 
-        <Route
-          path="/signup"
-          element=<Signup />
-        />
+        <Route path="/signup" element=<Signup /> />
 
         <Route
           path="/scan"
@@ -53,24 +50,16 @@ function App() {
           }
         />
 
-        <Route
-          path="/camera"
-          element=<Camera />
-        />
+        <Route path="/camera" element=<Camera /> />
+        <Route path="/dustbincamera" element=<DustbinCamera /> />
 
-        <Route
-          path="/home"
-          element={<Home logged={logged} />}
-        />
-
+        <Route path="/home" element={<Home logged={logged} />} />
+        <Route path="disposeyourself" element={<DisposeYourself />} />
+        
         {/* REWARD ROUTES */}
-        <Route
-          path="/rewards"
-        >
-          <Route
-            path="dispose"
-            element={<Dispose />}
-          />
+        <Route path="/rewards">
+          <Route path="dispose" element={<Dispose />} />
+
           <Route
             path="polls"
             element={
@@ -94,21 +83,13 @@ function App() {
         </Route>
 
         {/* STADIUM INTERACTIONS */}
-        <Route
-          path="/interactions"
-        >
+        <Route path="/interactions">
           <Route
             path="fan-movements"
             element={<Engage lisTicket={isTicket} setIsticket={setIsticket} />}
           />
-          <Route
-            path="modal"
-            element={<CustomCanvas />}
-          />
-          <Route
-            path="cheers"
-            element={<Cheers />}
-          />
+          <Route path="modal" element={<CustomCanvas />} />
+          <Route path="cheers" element={<Cheers />} />
           <Route
             path="fun-activities"
             element={
@@ -123,10 +104,7 @@ function App() {
 
         {/* EXPLORE MORE */}
         <Route path="/explore">
-          <Route
-            path="merchandise"
-            element={<Merchandise />}
-          />
+          <Route path="merchandise" element={<Merchandise />} />
         </Route>
 
         {/* UNUSED */}
